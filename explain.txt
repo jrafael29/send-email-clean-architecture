@@ -1,6 +1,6 @@
 
 O que é o sistema?
-. Sistema para envio de mensagem (whatsapp, email)
+. Sistema para envio de mensagem (email)
 
 
 Como funciona o sistema?

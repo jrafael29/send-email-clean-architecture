@@ -1,8 +1,7 @@
 
-
-export default class ConvertCsvToObjectUseCase {
+export default class convertCsvToObjectUseCase {
     
-    perform(csv: string): Array<any> {
+    public perform(csv: string): Array<any> {
         const header = csv.split('\n')[0];
         const lines = csv.split('\n').slice(1)
 

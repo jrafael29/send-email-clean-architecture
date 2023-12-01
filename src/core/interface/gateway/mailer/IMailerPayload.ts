@@ -1,5 +1,4 @@
 
-
 export default interface IMailerPayload {
     to: string
     from: string 

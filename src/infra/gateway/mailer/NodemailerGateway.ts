@@ -1,12 +1,19 @@
 import IMailerPayload from "../../../core/interface/gateway/mailer/IMailerPayload";
 import IMailer from "../../../core/interface/gateway/mailer/IMailer";
-import INodemailerTransporterPayload from "../../../core/interface/gateway/mailer/INodemailerTransporterPayload";
 import { Transporter, createTransport } from 'nodemailer';
 
-export default class NodeMailerGateway implements IMailer {
+export default class NodemailerGateway implements IMailer {
     #transporter: Transporter
-    constructor(data: INodemailerTransporterPayload){
-        this.#transporter = createTransport(data)
+    constructor(){
+        this.#transporter = createTransport({
+            host: process.env.SMTP_GMAIL_HOST,
+            port: +process.env.SMTP_GMAIL_PORT,
+            secure: false, 
+            auth: {
+                user: process.env.SMTP_GMAIL_USER,
+                pass: process.env.SMTP_GMAIL_PASS 
+            }
+        })
     }
     async sendEmail(data: IMailerPayload): Promise<boolean>{
         try{
