@@ -1,0 +1,12 @@
+
+O que é o sistema?
+. Sistema para envio de mensagem (whatsapp, email)
+
+
+Como funciona o sistema?
+. Dado um csv de telefones. 
+. Converta o csv para json
+. e, iterando sobre o array de telefones:
+	* Envie um email para cada numero da lista.
+	* Envie uma mensagem para cada numero da lista.
+
