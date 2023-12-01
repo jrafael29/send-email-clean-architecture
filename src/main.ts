@@ -5,12 +5,12 @@ import ConvertCsvToJsonUseCase from './core/usecase/convert/ConvertCsvToObjectUs
 import INodemailerTransporterPayload from './core/interface/gateway/mailer/INodemailerTransporterPayload';
 
 const nodemailerConstructorPayload: INodemailerTransporterPayload = {
-    host: 'smtp.gmail.com',
-    port: 587,
+    host: process.env.SMTP_GMAIL_HOST,
+    port: +process.env.SMTP_GMAIL_PORT,
     secure: false, 
     auth: {
-        user: 'jrafael5758@gmail.com',
-        pass: 'uvkx rinc lzit kcid '
+        user: process.env.SMTP_GMAIL_USER,
+        pass: process.env.SMTP_GMAIL_PASS 
     }
 }
 const csv: string = `nome,email,telefone
